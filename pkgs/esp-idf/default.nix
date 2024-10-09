@@ -29,6 +29,7 @@
 , ninja
 , ncurses5
 , dfu-util
+, ruby
 }:
 
 let
@@ -108,6 +109,7 @@ stdenv.mkDerivation rec {
 
     cmake
     ninja
+    ruby
 
     ncurses5
 

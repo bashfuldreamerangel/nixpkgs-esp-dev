@@ -125,17 +125,19 @@ rec {
 
   esp-idf-kconfig = buildPythonPackage rec {
     pname = "esp-idf-kconfig";
-    version = "2.3.0";
-    pyproject = true;
+    version = "1.4.3";
 
+    pyproject = true;
     build-system = [
       setuptools
     ];
 
-    src = fetchPypi {
+    src = fetchFromGitHub {
       inherit version;
-      pname = "esp_idf_kconfig";
-      sha256 = "sha256-n+8QM5xe+c8UFl8dTndRTBd4QW7nG1NWiYiEdll06wg=";
+      owner = "espressif";
+      repo = pname;
+      rev = "v${version}";
+      sha256 = "sha256-1ZPSZNN8FzZ9V6YB8lb09q6V0JGgheGNiRNnLQfnmPw=";
     };
 
     doCheck = false;
